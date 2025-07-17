@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Variable Pay Bonus Calculator - FY 2024/25</title>
-    <style>
+<style>
         * {
             margin: 0;
             padding: 0;
@@ -200,13 +200,80 @@
             padding: 20px;
             border-radius: 8px;
             backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .label-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
             font-weight: 600;
             font-size: 1em;
+        }
+
+        .info-icon {
+            width: 20px;
+            height: 20px;
+            background: #fbbf24;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e293b;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: help;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .tooltip {
+            position: fixed; /* instead of absolute */
+            z-index: 99999;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1e293b;
+            color: white;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 0.85em;
+            width: 280px;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            line-height: 1.4;
+            max-width: calc(100vw - 40px);
+            pointer-events: none;
+            bottom: auto;
+            left: auto;
+            right: auto;
+            z-index: 9999;
+        }
+        .tooltip::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 6px solid #1e293b;
+        }
+
+        .info-icon:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+            z-index: 9999;
         }
 
         .form-group input, .form-group select {
@@ -443,6 +510,12 @@
             .icon {
                 font-size: 1.2em;
             }
+
+            .tooltip {
+                width: 250px;
+                left: 0;
+                transform: none;
+            }
         }
 
         @media (max-width: 480px) {
@@ -478,14 +551,18 @@
             table {
                 min-width: 500px;
             }
+
+            .tooltip {
+                width: 220px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🎯 Variable Pay Calculator</h1>
-            <p>Calculate your bonus for Financial Year 2024/25</p>
+            <h1>🎯 Variable Pay (Bonus) Calculator</h1>
+            <p>It confused everyone. Here's the real calculator 😅</p>
             
             <div class="chatgpt-warning">
                 <strong>🚨 Stop Guessing Your Bonus!</strong> 
@@ -633,7 +710,9 @@
                 
                 <div class="form-grid">
                     <div class="form-group">
-                        <label for="band">Employee Band</label>
+                        <div class="label-container">
+                            <label for="band">Employee Band</label>
+                        </div>
                         <select id="band">
                             <option value="">Select your band</option>
                             <option value="1-2">Band 1-2 (Leadership)</option>
@@ -644,12 +723,28 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="salary">Monthly Consolidated Salary (LKR)</label>
+                        <div class="label-container">
+                            <label for="salary">Monthly Consolidated Salary (LKR)</label>
+                            <div class="info-icon">
+                                i
+                                <div class="tooltip">
+                                    Your total monthly salary including basic pay, allowances, and other fixed components before deductions. This is your gross monthly salary.
+                                </div>
+                            </div>
+                        </div>
                         <input type="number" id="salary" placeholder="e.g., 100000">
                     </div>
 
                     <div class="form-group">
-                        <label for="individual-rating">Individual Performance Rating</label>
+                        <div class="label-container">
+                            <label for="individual-rating">Individual Performance Rating</label>
+                            <div class="info-icon">
+                                i
+                                <div class="tooltip">
+                                    Your annual performance evaluation score from 1-5
+                                </div>
+                            </div>
+                        </div>
                         <select id="individual-rating">
                             <option value="">Select rating</option>
                             <option value="1">1 - Below Expectations</option>
@@ -661,7 +756,15 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="service-months">Service Months (as of 31 March 2025)</label>
+                        <div class="label-container">
+                            <label for="service-months">Service Months (as of 31 March 2025)</label>
+                            <div class="info-icon">
+                                i
+                                <div class="tooltip">
+                                    Number of months you've worked at the company by March 31, 2025. This affects your bonus eligibility - you need at least 6 months of service. Less than 12 months will result in pro-rated payout.
+                                </div>
+                            </div>
+                        </div>
                         <select id="service-months">
                             <option value="">Select months</option>
                             <option value="6">6 months</option>
@@ -675,7 +778,15 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="interim-pay">Interim Pay Received in Dec 2024 (LKR)</label>
+                        <div class="label-container">
+                            <label for="interim-pay">Interim Pay Received in Dec 2024 (LKR)</label>
+                            <div class="info-icon">
+                                i
+                                <div class="tooltip">
+                                    Any advance bonus payment you received in December 2024. This amount will be deducted from your final variable pay calculation. Enter 0 if you didn't receive any interim payment.
+                                </div>
+                            </div>
+                        </div>
                         <input type="number" id="interim-pay" placeholder="e.g., 50000" value="0">
                     </div>
                 </div>
@@ -744,9 +855,6 @@
                 </div>
             </div>
         </div>
-
-    <p>Crafted by <strong style="color: #000000;">Shahid</strong></p>
-</footer>
     </div>
 
     <script>
