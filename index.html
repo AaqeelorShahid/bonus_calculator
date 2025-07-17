@@ -407,6 +407,328 @@
             border-radius: 4px;
             font-weight: 600;
         }
+.final-payout-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    padding: 24px;
+    color: white;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.payout-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.payout-header h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.payout-period {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+
+.payout-amount {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
+}
+
+.amount-label {
+    display: block;
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 8px;
+}
+
+.amount-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.payout-summary {
+    margin-bottom: 20px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 0.95rem;
+}
+
+.summary-item:first-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.details-toggle {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.details-toggle:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+.detailed-breakdown {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.detailed-breakdown h4 {
+    margin: 0 0 20px 0;
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.details-grid {
+    display: grid;
+    gap: 12px;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    font-size: 0.9rem;
+}
+
+.detail-item span:first-child {
+    color: #666;
+    font-weight: 500;
+}
+
+.detail-item span:last-child {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .final-payout-card {
+        padding: 20px 16px;
+        margin: 0 -10px 20px -10px;
+        border-radius: 8px;
+    }
+    
+    .payout-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    .amount-value {
+        font-size: 2rem;
+    }
+    
+    .summary-item {
+        font-size: 0.9rem;
+        padding: 10px 0;
+    }
+    
+    .details-toggle {
+        padding: 14px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .detailed-breakdown {
+        padding: 20px 16px;
+        margin: 20px -10px 0 -10px;
+        border-radius: 8px;
+    }
+    
+    .detailed-breakdown h4 {
+        font-size: 1.1rem;
+        margin-bottom: 16px;
+    }
+    
+    .detail-item {
+        padding: 14px 12px;
+        font-size: 0.85rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    
+    .detail-item span:first-child {
+        font-size: 0.8rem;
+        color: #888;
+    }
+    
+    .detail-item span:last-child {
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
+    
+    .calculation-formula {
+        margin-top: 20px;
+        padding-top: 20px;
+    }
+    
+    .step {
+        padding: 12px;
+        gap: 12px;
+    }
+    
+    .step-number {
+        width: 24px;
+        height: 24px;
+        font-size: 0.8rem;
+    }
+    
+    .step-content strong {
+        font-size: 0.9rem;
+    }
+    
+    .step-content p {
+        font-size: 0.85rem;
+    }
+    
+    .calculation {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .final-payout-card {
+        padding: 16px 12px;
+    }
+    
+    .payout-header h3 {
+        font-size: 1.2rem;
+    }
+    
+    .amount-value {
+        font-size: 1.8rem;
+    }
+    
+    .summary-item {
+        font-size: 0.85rem;
+    }
+    
+    .details-toggle {
+        padding: 12px 14px;
+        font-size: 0.85rem;
+    }
+    
+    .detailed-breakdown {
+        padding: 16px 12px;
+    }
+    
+    .detail-item {
+        padding: 12px 10px;
+    }
+    
+    .step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+    }
+    
+    .step-content {
+        width: 100%;
+    }
+}
+
+/* Calculation Formula Styles */
+.calculation-formula {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 2px solid #e9ecef;
+}
+
+.calculation-formula h4 {
+    margin: 0 0 20px 0;
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.formula-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: #667eea;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content strong {
+    color: #333;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.step-content p {
+    margin: 4px 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.calculation {
+    background: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    color: #333 !important;
+    border: 1px solid #e9ecef;
+}
 
         /* Mobile Responsive Styles */
         @media (max-width: 768px) {
@@ -555,14 +877,16 @@
             .tooltip {
                 width: 220px;
             }
+
+            
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container">➡️
         <div class="header">
             <h1>🎯 Variable Pay (Bonus) Calculator</h1>
-            <p>It confused everyone. Here's the real calculator 😅</p>
+            <p>Because someone out there really believes we majored in calculus 🎓🧮</p>
             
             <div class="chatgpt-warning">
                 <strong>🚨 Stop Guessing Your Bonus!</strong> 
@@ -574,10 +898,10 @@
                 <p>This calculator is unofficial and may contain errors. Results should be treated as estimates only. <span class="highlight">Please verify with official HR communications.</span></p>
             </div>
 
-            <div style="background: rgba(16, 185, 129, 0.2); padding: 15px; border-radius: 8px; margin-top: 15px; font-size: 0.9em; border: 1px solid rgba(16, 185, 129, 0.3);">
+            <div style="background: rgba(185, 174, 16, 0.2); padding: 15px; border-radius: 8px; margin-top: 15px; font-size: 0.9em; border: 1px solid rgba(16, 185, 129, 0.3);">
                 <strong>🔒 PRIVACY GUARANTEE:</strong> This website does not store, collect, or steal any of your data. 
                 All calculations are performed locally in your browser. 
-                <br><strong>🔍 Transparency:</strong> You can inspect the source code by right-clicking → "View Page Source" or pressing F12.
+                <br><strong>🔍 Transparency:</strong> You can inspect the source code by right-clicking → "View Page Source" or pressing F12
             </div>
         </div>
 
@@ -796,7 +1120,6 @@
 
             <!-- Result -->
             <div class="result" id="result">
-                <h3>Your Variable Pay Calculation</h3>
                 <div class="result-details" id="result-details">
                     <!-- Results will be populated here -->
                 </div>
@@ -930,66 +1253,130 @@
         }
 
         function displayResults(data) {
-            const resultDiv = document.getElementById('result');
-            const detailsDiv = document.getElementById('result-details');
-            
-            const formatCurrency = (amount) => `LKR ${amount.toLocaleString('en-US')}`;
-            const formatPercent = (percent) => `${percent.toFixed(2)}%`;
-            
-            detailsDiv.innerHTML = `
-                <div class="result-item">
+    const resultDiv = document.getElementById('result');
+    const detailsDiv = document.getElementById('result-details');
+    
+    const formatCurrency = (amount) => `LKR ${amount.toLocaleString('en-US')}`;
+    const formatPercent = (percent) => `${percent.toFixed(2)}%`;
+    
+    detailsDiv.innerHTML = `
+        <div class="final-payout-card">
+            <div class="payout-header">
+                <h3>Your Bonus Calculation</h3>
+            </div>
+            <div class="payout-amount">
+                <span class="amount-label">Bonus Amount:</span>
+                <span class="amount-value">${formatCurrency(data.finalPayout)}</span>
+            </div>
+            <button class="details-toggle" onclick="toggleDetails()">
+                <span id="toggle-text">View Detailed Breakdown</span>
+                <span id="toggle-icon">▼</span>
+            </button>
+        </div>
+        
+        <div class="detailed-breakdown" id="detailed-breakdown" style="display: none;">
+            <h4>Calculation Details</h4>
+            <div class="details-grid">
+                <div class="detail-item">
                     <span>Annual Salary:</span>
                     <span>${formatCurrency(data.annualSalary)}</span>
                 </div>
-                <div class="result-item">
+                <div class="detail-item">
                     <span>Employee Band:</span>
                     <span>${data.band}</span>
                 </div>
-                <div class="result-item">
+                <div class="detail-item">
                     <span>Target Variable Pay:</span>
                     <span>${data.targetPercent}% of fixed pay</span>
                 </div>
-                <div class="result-item">
+                <div class="detail-item">
                     <span>Individual Rating:</span>
                     <span>${data.individualRating} (${data.individualMultiplier}% multiplier)</span>
                 </div>
-                <div class="result-item">
+                <div class="detail-item">
                     <span>Organizational Rating:</span>
                     <span>3 (${data.orgMultiplier}% multiplier)</span>
                 </div>
-                <div class="result-item">
+                <div class="detail-item">
                     <span>Service Months:</span>
                     <span>${data.serviceMonths} months</span>
                 </div>
-                <div class="result-item">
+                <div class="detail-item">
                     <span>Organizational Component:</span>
                     <span>${formatPercent(data.orgComponent)} (${data.orgWeight}% weight)</span>
                 </div>
-                <div class="result-item">
+                <div class="detail-item">
                     <span>Individual Component:</span>
                     <span>${formatPercent(data.indComponent)} (${data.indWeight}% weight)</span>
                 </div>
-                <div class="result-item">
+                <div class="detail-item">
                     <span>Total Multiplier:</span>
                     <span>${formatPercent(data.totalMultiplier)}</span>
                 </div>
-                <div class="result-item">
-                    <span>Gross Bonus:</span>
-                    <span>${formatCurrency(data.grossBonus)}</span>
-                </div>
-                <div class="result-item">
-                    <span>Less: Interim Pay:</span>
-                    <span>${formatCurrency(data.interimPay)}</span>
-                </div>
-                <div class="result-item">
-                    <span><strong>Final Payout (July 2025):</strong></span>
-                    <span><strong>${formatCurrency(data.finalPayout)}</strong></span>
-                </div>
-            `;
+            </div>
             
-            resultDiv.style.display = 'block';
-            resultDiv.scrollIntoView({ behavior: 'smooth' });
-        }
+            <div class="calculation-formula">
+                <h4>How It's Calculated</h4>
+                <div class="formula-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <strong>Target Variable Pay</strong>
+                            <p>Annual Salary × Target Percentage</p>
+                            <p class="calculation">${formatCurrency(data.annualSalary)} × ${data.targetPercent}% = ${formatCurrency(data.annualSalary * data.targetPercent / 100)}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <strong>Performance Multiplier</strong>
+                            <p>Individual Component + Organizational Component</p>
+                            <p class="calculation">${formatPercent(data.indComponent)} + ${formatPercent(data.orgComponent)} = ${formatPercent(data.totalMultiplier)}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <strong>Gross Bonus</strong>
+                            <p>Target Variable Pay × Performance Multiplier</p>
+                            <p class="calculation">${formatCurrency(data.annualSalary * data.targetPercent / 100)} × ${formatPercent(data.totalMultiplier)} = ${formatCurrency(data.grossBonus)}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <strong>Final Payout</strong>
+                            <p>Gross Bonus - Interim Pay</p>
+                            <p class="calculation">${formatCurrency(data.grossBonus)} - ${formatCurrency(data.interimPay)} = ${formatCurrency(data.finalPayout)}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    resultDiv.style.display = 'block';
+    resultDiv.scrollIntoView({ behavior: 'smooth' });
+}
+
+function toggleDetails() {
+    const detailsDiv = document.getElementById('detailed-breakdown');
+    const toggleText = document.getElementById('toggle-text');
+    const toggleIcon = document.getElementById('toggle-icon');
+    
+    if (detailsDiv.style.display === 'none') {
+        detailsDiv.style.display = 'block';
+        toggleText.textContent = 'Hide Detailed Breakdown';
+        toggleIcon.textContent = '▲';
+    } else {
+        detailsDiv.style.display = 'none';
+        toggleText.textContent = 'View Detailed Breakdown';
+        toggleIcon.textContent = '▼';
+    }
+}
     </script>
 </body>
 </html>
